@@ -1,18 +1,22 @@
-// file :
-// author :
-// date : 2018-03-08
-// description :
+// file 			:	vga0.v
+// author 			:	ZHUHAI.EE (wmy)
+// date 			: 	2018-03-08
+// description 		:	this file is a simple example for using VGA
+// additional		:	get more information from wechat public number(xy_ee)
 module vga0 
 (
-	input vga_clk,
+	input 			vga_clk,
 	//add reset
-	input rst_n,
-	output vga_hs,
-	output vga_vs,
-	output[4:0] vga_red,
-	output[5:0] vga_green,
-	output[4:0] vga_blue
+	input 			rst_n,
+	output 			vga_hs,
+	output 			vga_vs,
+	output[4:0] 	vga_red,
+	output[5:0] 	vga_green,
+	output[4:0] 	vga_blue
 );
+//	------------------------------------------------
+//	param. definition 
+//	------------------------------------------------
 	parameter H_SYNC   =  12;  
 	parameter H_BACK   =  40  ;
 	parameter H_ACTIVE =  1920;  
@@ -25,7 +29,9 @@ module vga0
 	parameter VP = V_SYNC + V_BACK + V_ACTIVE + V_FRONT;
 	
 	parameter START =1;
-	// cnt x,y
+//	------------------------------------------------
+//	register. definition 
+//	------------------------------------------------
 	reg [12:0] cnt_xx;
 	reg [12:0] cnt_yy;
 	//
